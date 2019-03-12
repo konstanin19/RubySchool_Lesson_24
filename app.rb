@@ -21,6 +21,11 @@ post '/visit' do
 	@baber = params[:baber]
 	@color = params[:color]
 
+	if @username ==''
+		@error = 'Введите имя'
+		return erb :visit
+	end
+
 	@title = 'Thank you!'
 	@message = "Дорогой #{@username}, вы записались #{@datetime} к парикмахеру #{@baber},цвет краски: #{@color}"
 
