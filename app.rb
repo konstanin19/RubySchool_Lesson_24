@@ -23,8 +23,21 @@ post '/visit' do
 
 	if @username ==''
 		@error = 'Введите имя'
+	end
+
+	if @phone ==''
+		@error = 'Введите номер телефона'
+	end
+	if @datetime ==''
+		@error = 'Введите дату и время визита'
+	end
+	if @error !=''
 		return erb :visit
 	end
+
+
+		
+	
 
 	@title = 'Thank you!'
 	@message = "Дорогой #{@username}, вы записались #{@datetime} к парикмахеру #{@baber},цвет краски: #{@color}"
